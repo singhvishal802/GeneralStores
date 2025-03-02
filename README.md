@@ -18,6 +18,20 @@ This is a simple e-commerce app built with React Native and TypeScript. The app 
 
 The app uses React Navigation for navigation and React Context for state management.
 
+## Features
+
+1. Banners: Auto-play banners with a scroll indicator.
+
+2. Product List: Horizontal list of featured products.
+
+3. Search Functionality: Search for products by name.
+
+4. Cart Management: Add, remove, and adjust quantities of products in the cart.
+
+5. Payment Integration: Mock payment method selection.
+
+6. Order Confirmation: Confirmation screen with a success message.
+
 ## Technologies Used
 
 1. React Native: For building the mobile app.
@@ -34,7 +48,7 @@ The app uses React Navigation for navigation and React Context for state managem
 
 # Prerequisites
 
-1. Node.js: Install Node.js from nodejs.org.
+1. Node.js: Install Node.js from [nodejs.org](https://nodejs.org/en).
 
 2. React Native CLI: Install the React Native CLI globally.
 
@@ -42,13 +56,24 @@ The app uses React Navigation for navigation and React Context for state managem
 
 # Steps to Run the Project
 
-1. Clone the Repository
+1. Clone the Repository [Repo](https://github.com/singhvishal802/GeneralStores.git)
 
-2. Install Dependencies: npm install
+2. cd GeneralStores
 
-3. Run the App:
+3. Install Dependencies: npm install
+
+4. Run the App:
 
 - For Android: npx react-native run-android
 - For iOS: cd ios && pod install && npx react-native run-ios
 
-4. Start the Metro Bundler: npx react-native start
+5. Start the Metro Bundler: npx react-native start
+
+## Contact
+
+For any questions or feedback, please contact:
+
+- Email: singh.vishal802@gmail.com
+- GitHub: singhvishal802
+
+Thank you for checking out this project! 🚀
