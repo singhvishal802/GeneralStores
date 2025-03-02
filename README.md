@@ -20,7 +20,7 @@ The app uses React Navigation for navigation and React Context for state managem
 
 ## Features
 
-1. Banners: Auto-play banners with a scroll indicator.
+1. Banners: Auto-play banners.
 
 2. Product List: Horizontal list of featured products.
 
@@ -46,7 +46,7 @@ The app uses React Navigation for navigation and React Context for state managem
 
 ## Setup Instructions
 
-# Prerequisites
+### Prerequisites
 
 1. Node.js: Install Node.js from [nodejs.org](https://nodejs.org/en).
 
@@ -54,7 +54,7 @@ The app uses React Navigation for navigation and React Context for state managem
 
 3. Android Studio/Xcode: For running the app on Android/iOS.
 
-# Steps to Run the Project
+#### Steps to Run the Project
 
 1. Clone the Repository [Repo](https://github.com/singhvishal802/GeneralStores.git)
 
