@@ -1,11 +1,20 @@
-import {View, Text, StyleSheet, Button, Alert} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
 import React, {useState} from 'react';
 import {paymentMethods} from '../utils/data';
 import {useNavigation} from '@react-navigation/native';
 import RouteNames from '../navigation/routeName';
+import {mockPayment} from '../utils/mockPayment';
 
-const SelectPayMent = () => {
+const SelectPayMent = ({total}: any) => {
   const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(false);
 
   // store default payment method
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(
@@ -13,24 +22,20 @@ const SelectPayMent = () => {
   );
 
   // Handle payment based on the selected payment method
-  const handlePlaceOrder = () => {
-    switch (selectedPaymentMethod.name) {
-      case 'Credit Card':
-        Alert.alert('Payment', 'Credit Card payment success.');
-        break;
-      case 'PayPal':
-        Alert.alert('Payment', 'PayPal payment success.');
-        break;
-      case 'Razorpay':
-        Alert.alert('Payment', 'Razorpay payment success.');
-        break;
-      default:
-        Alert.alert('Error', 'Invalid payment method.');
-        return;
+  const handlePlaceOrder = async () => {
+    setIsLoading(true);
+    try {
+      const paymentResponse = await mockPayment(
+        selectedPaymentMethod.name,
+        total,
+      ); // Mock payment
+      Alert.alert('Success', paymentResponse.message);
+      navigation.navigate(RouteNames.CONFIRMATION);
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    } finally {
+      setIsLoading(false);
     }
-
-    // Navigate to the Confirmation Screen
-    navigation.navigate(RouteNames.CONFIRMATION);
   };
 
   // For simplicity, cycle through payment methods
@@ -50,7 +55,11 @@ const SelectPayMent = () => {
       <Button title="Change Payment Method" onPress={changePaymentMethod} />
       {/* Place Order Button */}
       <View style={styles.placeOrderView}>
-        <Button title="Place Order" onPress={handlePlaceOrder} />
+        {isLoading ? (
+          <ActivityIndicator size="large" color="#007BFF" />
+        ) : (
+          <Button title="Place Order" onPress={handlePlaceOrder} />
+        )}
       </View>
     </View>
   );

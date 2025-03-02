@@ -32,7 +32,7 @@ const CartReviewScreen = () => {
       </View>
 
       {/* Display Selected Payment Method */}
-      <SelectPayMent />
+      <SelectPayMent total={total} />
     </View>
   );
 };

@@ -23,6 +23,11 @@ export type ItemProps = {
     }
   }
 
+  export type PaymentResponse = {
+    success:boolean,
+    message:string
+  }
+
   type CartItem = {
     id: string;
     name: string;
